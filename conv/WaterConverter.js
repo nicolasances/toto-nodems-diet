@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 
 exports.waterConverter = {
 
@@ -18,9 +20,9 @@ exports.waterConverter = {
 
     return {
       amount: json.amount,
-      hour: json.hour,
-      timestamp: json.timestamp,
-      date: json.date
+      hour: moment().format('H'),
+      timestamp: moment().format('YYYYMMDD HH:mm:ss'),
+      date: moment().format('YYYYMMDD');
     };
   },
 
