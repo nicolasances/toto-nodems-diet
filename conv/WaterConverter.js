@@ -1,4 +1,4 @@
-var moment = require('moment');
+var moment = require('moment-timezone');
 
 exports.waterConverter = {
 
@@ -37,9 +37,9 @@ exports.waterConverter = {
 
     return {
       amount: parseInt(water.amount),
-      hour: moment().format('H'),
-      timestamp: moment().format('YYYYMMDD HH:mm:ss'),
-      date: moment().format('YYYYMMDD')
+      hour: moment().tz('Europe/Rome').format('H'),
+      timestamp: moment().tz('Europe/Rome').format('YYYYMMDD HH:mm:ss'),
+      date: moment().tz('Europe/Rome').format('YYYYMMDD')
     };
   }
 }
