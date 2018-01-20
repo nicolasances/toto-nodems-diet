@@ -24,6 +24,14 @@ exports.waterConverter = {
     };
   },
 
+  toWaterGoalPO : function(goal) {
+
+    return {
+      goal: 'water-consumption',
+      amount: parseInt(goal.amount)
+    };
+  },
+
   toWaterPO : function(water) {
 
     return {
