@@ -1,6 +1,5 @@
 var moment = require('moment');
 
-
 exports.waterConverter = {
 
   findWaterConsumptionGoal : function() {
@@ -22,7 +21,7 @@ exports.waterConverter = {
       amount: json.amount,
       hour: moment().format('H'),
       timestamp: moment().format('YYYYMMDD HH:mm:ss'),
-      date: moment().format('YYYYMMDD');
+      date: moment().format('YYYYMMDD')
     };
   },
 
