@@ -13,7 +13,7 @@ exports.getWater = function(waterFilter) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
-      var results = db.db(config.dbName).collection(config.collections.water).find(converter.waterConverter.findWaterConsumption(waterFilter)).sort(converter.weightConverter.sortDateDesc()).toArray(function(err, array) {
+      var results = db.db(config.dbName).collection(config.collections.water).find(converter.waterConverter.findWaterConsumption(waterFilter)).toArray(function(err, array) {
 
         db.close();
 
