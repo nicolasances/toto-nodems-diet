@@ -19,9 +19,9 @@ exports.waterConverter = {
 
     return {
       amount: json.amount,
-      hour: moment().format('H'),
-      timestamp: moment().format('YYYYMMDD HH:mm:ss'),
-      date: moment().format('YYYYMMDD')
+      hour: json.hour,
+      timestamp: json.timestamp,
+      date: json.date
     };
   },
 
@@ -37,9 +37,9 @@ exports.waterConverter = {
 
     return {
       amount: parseInt(water.amount),
-      hour: parseInt(water.hour),
-      timestamp: water.timestamp,
-      date: water.date
+      hour: moment().format('H'),
+      timestamp: moment().format('YYYYMMDD HH:mm:ss'),
+      date: moment().format('YYYYMMDD')
     };
   }
 }
