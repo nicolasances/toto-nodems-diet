@@ -35,9 +35,6 @@ exports.waterConverter = {
 
   toWaterPO : function(water) {
 
-    console.log(moment());
-    console.log(moment().tz('Europe/Rome'));
-
     return {
       amount: parseInt(water.amount),
       hour: moment().tz('Europe/Rome').format('H'),
