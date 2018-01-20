@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 
 var getWaterConsumptionGoalDlg = require('./dlg/GetWaterConsumptionGoalDelegate');
 var getWaterDlg = require('./dlg/GetWaterDelegate');
-var postWaterDlg = require('./dlg/PostWaterDlg');
+var postWaterDlg = require('./dlg/PostWaterDelegate');
 var putWaterConsumptionGoalDlg = require('./dlg/PutWaterConsumptionGoalDelegate');
 
 var app = express();
