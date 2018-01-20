@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 var config = require('../config');
-var converter = require('../conv/WeightConverter');
+var converter = require('../conv/WaterConverter');
 
 var MongoClient = mongo.MongoClient;
 
