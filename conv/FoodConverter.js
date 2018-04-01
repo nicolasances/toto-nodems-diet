@@ -12,7 +12,7 @@ exports.foodConverter = {
       sugars: food.sugars,
       proteins: food.proteins
     };
-  }
+  },
 
   toFood : function(json) {
 
