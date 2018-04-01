@@ -10,7 +10,8 @@ exports.foodConverter = {
       fat: food.fat,
       carbs: food.carbs,
       sugars: food.sugars,
-      proteins: food.proteins
+      proteins: food.proteins,
+      category: food.category
     };
   },
 
@@ -23,7 +24,8 @@ exports.foodConverter = {
       fat: json.fat,
       carbs: json.carbs,
       sugars: json.sugars,
-      proteins: json.proteins
+      proteins: json.proteins,
+      category: json.category
     }
   }
 }

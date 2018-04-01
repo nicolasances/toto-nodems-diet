@@ -9,6 +9,7 @@ var postWaterDlg = require('./dlg/PostWaterDelegate');
 var putWaterConsumptionGoalDlg = require('./dlg/PutWaterConsumptionGoalDelegate');
 var getFoodsDlg = require('./dlg/GetFoodsDelegate');
 var postFoodDlg = require('./dlg/PostFoodDelegate');
+var deleteFoodDlg = require('./dlg/DeleteFoodDelegate');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.get('/water/goal', function(req, res) {logger.apiCalled('diet', '/water/goal
 app.put('/water/goal', function(req, res) {logger.apiCalled('diet', '/water/goal', 'PUT', req.query, req.params, req.body); putWaterConsumptionGoalDlg.putWaterConsumptionGoal(req.body).then(function(result) {res.send(result);});});
 app.get('/foods', function(req, res) {logger.apiCalled('diet', '/foods', 'GET', req.query, req.params, req.body); getFoodsDlg.getFoods().then(function(result) {res.send(result);});});
 app.post('/foods', function(req, res) {logger.apiCalled('diet', '/foods', 'POST', req.query, req.params, req.body); postFoodDlg.postFood(req.body).then(function(result) {res.send(result);});});
+app.delete('/foods/:id', function(req, res) {logger.apiCalled('diet', '/foods/{id}', 'DELETE', req.query, req.params, req.body); deleteFoodDlg.deleteFood(req.body).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
   console.log('Diet Microservice up and running');
