@@ -20,7 +20,7 @@ exports.getFoods = function() {
 
           var food = converter.foodConverter.toFood(array[i]);
 
-          waters.push(food);
+          foods.push(food);
         }
 
         success({foods: foods});
