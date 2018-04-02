@@ -11,7 +11,8 @@ exports.foodConverter = {
       carbs: food.carbs,
       sugars: food.sugars,
       proteins: food.proteins,
-      category: food.category
+      category: food.category,
+      unit: food.unit // can be 1, 100gr, 100ml
     };
   },
 
@@ -25,7 +26,8 @@ exports.foodConverter = {
       carbs: json.carbs,
       sugars: json.sugars,
       proteins: json.proteins,
-      category: json.category
+      category: json.category,
+      unit: json.unit
     }
   }
 }
