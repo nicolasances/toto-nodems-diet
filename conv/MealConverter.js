@@ -14,6 +14,7 @@ exports.mealConverter = {
     }
 
     return {
+      date: meal.date,
       time: meal.time,
       calories: meal.calories,
       fat: meal.fat,
@@ -28,7 +29,8 @@ exports.mealConverter = {
 
     return {
       id: json._id,
-      name: json.name,
+      date: json.date,
+      time: json.time,
       calories: json.calories,
       fat: json.fat,
       carbs: json.carbs,
