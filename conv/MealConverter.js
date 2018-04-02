@@ -9,7 +9,9 @@ exports.mealConverter = {
       aliments.push({
         id: meal.aliments[i].id,
         name: meal.aliments[i].name,
-        amount: meal.aliments[i].amount
+        amountGr: meal.aliments[i].amountGr,
+        amountMl: meal.aliments[i].amountMl,
+        amount: meal.aliments[i].amount,  
       })
     }
 
