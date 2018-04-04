@@ -7,7 +7,7 @@ var MongoClient = mongo.MongoClient;
 /**
  * Date is in yyyyMMdd format
  */
-exports.getWater = function(date) {
+exports.getMeals = function(date) {
 
   return new Promise(function(success, failure) {
 
