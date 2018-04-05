@@ -6,12 +6,12 @@ exports.foodConverter = {
 
     return {
       name: food.name,
-      calories: food.calories,
-      fat: food.fat,
-      carbs: food.carbs,
-      sugars: food.sugars,
-      proteins: food.proteins,
-      category: food.category,
+      calories: parseFloat(food.calories),
+      fat: parseFloat(food.fat),
+      carbs: parseFloat(food.carbs),
+      sugars: parseFloat(food.sugars),
+      proteins: parseFloat(food.proteins),
+      category: parseFloat(food.category),
       unit: food.unit // can be 1, 100gr, 100ml
     };
   },
