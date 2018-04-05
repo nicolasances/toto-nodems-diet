@@ -11,7 +11,7 @@ exports.foodConverter = {
       carbs: parseFloat(food.carbs),
       sugars: parseFloat(food.sugars),
       proteins: parseFloat(food.proteins),
-      category: parseFloat(food.category),
+      category: food.category,
       unit: food.unit // can be 1, 100gr, 100ml
     };
   },
