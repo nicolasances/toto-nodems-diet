@@ -11,18 +11,18 @@ exports.mealConverter = {
         name: meal.aliments[i].name,
         amountGr: meal.aliments[i].amountGr,
         amountMl: meal.aliments[i].amountMl,
-        amount: meal.aliments[i].amount,  
+        amount: meal.aliments[i].amount,
       })
     }
 
     return {
       date: meal.date,
       time: meal.time,
-      calories: meal.calories,
-      fat: meal.fat,
-      carbs: meal.carbs,
-      sugars: meal.sugars,
-      proteins: meal.proteins,
+      calories: parseFloat(meal.calories),
+      fat: parseFloat(meal.fat),
+      carbs: parseFloat(meal.carbs),
+      sugars: parseFloat(meal.sugars),
+      proteins: parseFloat(meal.proteins),
       aliments: aliments
     };
   },
