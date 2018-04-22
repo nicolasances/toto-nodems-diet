@@ -13,7 +13,7 @@ exports.getFoods = function(filter) {
       var mongoFilter = {};
       if (filter.category != null) mongoFilter = {category: filter.category};
 
-      var results = db.db(config.dbName).collection(config.collections.food).find(mongoFilter).toArray(function(err, array) {
+      var results = db.db(config.dbName).collection(config.collections.food).find(mongoFilter).sort({name: 1}).toArray(function(err, array) {
 
         db.close();
 
