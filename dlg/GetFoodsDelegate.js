@@ -4,13 +4,16 @@ var converter = require('../conv/FoodConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getFoods = function() {
+exports.getFoods = function(filter) {
 
   return new Promise(function(success, failure) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
-      var results = db.db(config.dbName).collection(config.collections.food).find().toArray(function(err, array) {
+      var mongoFilter = {};
+      if (filter.category != null) mongoFilter = {category: filter.category};
+
+      var results = db.db(config.dbName).collection(config.collections.food).find(mongoFilter).toArray(function(err, array) {
 
         db.close();
 
