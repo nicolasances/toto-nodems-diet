@@ -44,6 +44,8 @@ exports.mealConverter = {
 
   findMeals : function(date) {
 
+    if (date == null) return {};
+
     return {date: date};
   }
 }
