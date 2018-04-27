@@ -49,7 +49,7 @@ exports.mealConverter = {
    */
   findMeals : function(date, dateFrom) {
 
-    if (dateFrom != null) return {'$gte': {'date' : dateFrom}};
+    if (dateFrom != null) return {date: {'$gte' : dateFrom}};
 
     return {date: date};
   }
