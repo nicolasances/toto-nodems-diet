@@ -42,9 +42,14 @@ exports.mealConverter = {
     }
   },
 
-  findMeals : function(date) {
+  /**
+   * Filters the meals.
+   *  Per date : specific yyyyMMdd date
+   *  From date : gets all the meals from a specific date
+   */
+  findMeals : function(date, dateFrom) {
 
-    if (date == null) return {};
+    if (dateFrom != null) return {'$gte': {'date' : dateFrom}};
 
     return {date: date};
   }
