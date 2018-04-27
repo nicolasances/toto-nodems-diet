@@ -7,13 +7,13 @@ var MongoClient = mongo.MongoClient;
 /**
  * Date is in yyyyMMdd format
  */
-exports.getMeals = function(date) {
+exports.getMeals = function(date, dateFrom) {
 
   return new Promise(function(success, failure) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
-      var results = db.db(config.dbName).collection(config.collections.meals).find(converter.mealConverter.findMeals(date)).toArray(function(err, array) {
+      var results = db.db(config.dbName).collection(config.collections.meals).find(converter.mealConverter.findMeals(date, dateFrom)).toArray(function(err, array) {
 
         db.close();
 

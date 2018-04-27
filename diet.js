@@ -31,7 +31,7 @@ app.put('/water/goal', function(req, res) {logger.apiCalled('diet', '/water/goal
 app.get('/foods', function(req, res) {logger.apiCalled('diet', '/foods', 'GET', req.query, req.params, req.body); getFoodsDlg.getFoods({category: req.query.category}).then(function(result) {res.send(result);});});
 app.post('/foods', function(req, res) {logger.apiCalled('diet', '/foods', 'POST', req.query, req.params, req.body); postFoodDlg.postFood(req.body).then(function(result) {res.send(result);});});
 app.delete('/foods/:id', function(req, res) {logger.apiCalled('diet', '/foods/{id}', 'DELETE', req.query, req.params, req.body); deleteFoodDlg.deleteFood(req.params.id).then(function(result) {res.send(result);});});
-app.get('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'GET', req.query, req.params, req.body); getMealsDlg.getMeals(req.query.date).then(function(result) {res.send(result);});});
+app.get('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'GET', req.query, req.params, req.body); getMealsDlg.getMeals(req.query.date, req.query.dateFrom).then(function(result) {res.send(result);});});
 app.post('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'POST', req.query, req.params, req.body); postMealDlg.postMeal(req.body).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
