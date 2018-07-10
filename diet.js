@@ -12,6 +12,7 @@ var postFoodDlg = require('./dlg/PostFoodDelegate');
 var deleteFoodDlg = require('./dlg/DeleteFoodDelegate');
 var getMealsDlg = require('./dlg/GetMealsDelegate');
 var postMealDlg = require('./dlg/PostMealDelegate');
+var getMealPrepsDlg = require('./dlg/GetMealPrepsDelegate');
 var postMealPrepDlg = require('./dlg/PostMealPrepDelegate');
 
 var app = express();
@@ -34,6 +35,7 @@ app.post('/foods', function(req, res) {logger.apiCalled('diet', '/foods', 'POST'
 app.delete('/foods/:id', function(req, res) {logger.apiCalled('diet', '/foods/{id}', 'DELETE', req.query, req.params, req.body); deleteFoodDlg.deleteFood(req.params.id).then(function(result) {res.send(result);});});
 app.get('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'GET', req.query, req.params, req.body); getMealsDlg.getMeals(req.query.date, req.query.dateFrom).then(function(result) {res.send(result);});});
 app.post('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'POST', req.query, req.params, req.body); postMealDlg.postMeal(req.body).then(function(result) {res.send(result);});});
+app.get('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps', 'GET', req.query, req.params, req.body); getMealPrepsDlg.getMealPreps().then(function(result) {res.send(result);});});
 app.post('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps', 'POST', req.query, req.params, req.body); postMealPrepDlg.postMealPrep(req.body).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
