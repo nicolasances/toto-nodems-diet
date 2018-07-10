@@ -40,17 +40,6 @@ exports.mealPrepConverter = {
       proteins: json.proteins,
       aliments: json.aliments
     }
-  },
-
-  /**
-   * Filters the meals.
-   *  Per date : specific yyyyMMdd date
-   *  From date : gets all the meals from a specific date
-   */
-  findMeals : function(date, dateFrom) {
-
-    if (dateFrom != null) return {date: {'$gte' : dateFrom}};
-
-    return {date: date};
   }
+
 }
