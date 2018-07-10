@@ -1,6 +1,6 @@
 var mongo = require('mongodb');
 var config = require('../config');
-var converter = require('../conv/PostMealPrepDelegateConverter');
+var converter = require('../conv/MealPrepConverter');
 
 var MongoClient = mongo.MongoClient;
 
