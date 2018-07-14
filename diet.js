@@ -15,6 +15,8 @@ var postMealDlg = require('./dlg/PostMealDelegate');
 var getMealPrepsDlg = require('./dlg/GetMealPrepsDelegate');
 var postMealPrepDlg = require('./dlg/PostMealPrepDelegate');
 
+var apiName = 'diet';
+
 var app = express();
 
 app.use(function(req, res, next) {
@@ -25,7 +27,7 @@ app.use(function(req, res, next) {
 });
 app.use(bodyParser.json());
 
-app.get('/', function(req, res) {res.send({status: 'running'});});
+app.get('/', function(req, res) {res.send({api: apiName, status: 'running'});});
 app.get('/water', function(req, res) {logger.apiCalled('diet', '/water', 'GET', req.query, req.params, req.body); getWaterDlg.getWater({date: req.query.date}).then(function(result) {res.send(result);});});
 app.post('/water', function(req, res) {logger.apiCalled('diet', '/water', 'POST', req.query, req.params, req.body); postWaterDlg.postWater(req.body).then(function(result) {res.send(result);});});
 app.get('/water/goal', function(req, res) {logger.apiCalled('diet', '/water/goal', 'GET', req.query, req.params, req.body); getWaterConsumptionGoalDlg.getWaterConsumptionGoal().then(function(result) {res.send(result);});});
