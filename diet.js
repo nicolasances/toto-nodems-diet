@@ -1,7 +1,7 @@
 var express = require('express');
 var Promise = require('promise');
 var bodyParser = require("body-parser");
-var logger = require('toto-apimon-events')
+var logger = require('toto-apimon-events');
 
 var getWaterConsumptionGoalDlg = require('./dlg/GetWaterConsumptionGoalDelegate');
 var getWaterDlg = require('./dlg/GetWaterDelegate');
