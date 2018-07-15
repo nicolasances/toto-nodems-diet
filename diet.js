@@ -41,5 +41,5 @@ app.get('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps',
 app.post('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps', 'POST', req.query, req.params, req.body); postMealPrepDlg.postMealPrep(req.body).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
-  console.log('Diet Microservice up and running');
+  console.log('Diet Microservice up and running!');
 });
