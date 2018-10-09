@@ -15,6 +15,7 @@ var postMealDlg = require('./dlg/PostMealDelegate');
 var getMealPrepsDlg = require('./dlg/GetMealPrepsDelegate');
 var postMealPrepDlg = require('./dlg/PostMealPrepDelegate');
 var deleteMealPrep = require('./dlg/DeleteMealPrep');
+var getMealPrep = require('./dlg/GetMealPrep');
 
 var apiName = 'diet';
 
@@ -41,6 +42,7 @@ app.post('/meals', function(req, res) {logger.apiCalled('diet', '/meals', 'POST'
 app.get('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps', 'GET', req.query, req.params, req.body); getMealPrepsDlg.getMealPreps().then(function(result) {res.send(result);});});
 app.post('/mealPreps', function(req, res) {logger.apiCalled('diet', '/mealPreps', 'POST', req.query, req.params, req.body); postMealPrepDlg.postMealPrep(req.body).then(function(result) {res.send(result);});});
 app.delete('/mealPreps/:id', function(req, res) {logger.apiCalled('diet', '/mealPreps/{id}', 'DELETE', req.query, req.params, req.body); deleteMealPrep.do(req.params.id).then(function(result) {res.send(result);});});
+app.get('/mealPreps/:id', function(req, res) {logger.apiCalled('diet', '/mealPreps/{id}', 'GET', req.query, req.params, req.body); getMealPrep.do(req.params.id).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
   console.log('Diet Microservice up and running!');
