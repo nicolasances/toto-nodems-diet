@@ -12,6 +12,11 @@ exports.mealPrepConverter = {
         amountGr: meal.aliments[i].amountGr,
         amountMl: meal.aliments[i].amountMl,
         amount: meal.aliments[i].amount,
+        calories: meal.aliments[i].calories,
+        fat: meal.aliments[i].fat,
+        carbs: meal.aliments[i].carbs,
+        sugars: meal.aliments[i].sugars,
+        proteins: meal.aliments[i].proteins
       })
     }
 
