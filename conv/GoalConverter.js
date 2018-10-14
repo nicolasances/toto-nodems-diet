@@ -14,6 +14,7 @@ exports.goalConverter = {
   toGoal : function(json) {
 
     return {
+      id: json._id,
       calories: json.calories,
       set: json.set
     };
