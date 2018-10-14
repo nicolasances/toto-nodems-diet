@@ -12,7 +12,8 @@ exports.do  = function(id, food) {
 
       db.db(config.dbName).collection(config.collections.food).updateOne(
         {_id: new mongo.ObjectId(id)},
-        converter.foodConverter.toFoodPO(food), function(err, res) {
+        {$set: converter.foodConverter.toFoodPO(food)}, 
+        function(err, res) {
 
         db.close();
 
