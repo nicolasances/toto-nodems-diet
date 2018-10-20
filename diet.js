@@ -21,7 +21,7 @@ var putMealPrep = require('./dlg/PutMealPrepDelegate');
 var getGoal = require('./dlg/goal/GetGoal');
 var postGoal = require('./dlg/goal/PostGoal');
 var putGoal = require('./dlg/goal/PutGoal');
-var getCaloriesPerDay = require('./dlg/goal/GetCaloriesPerDay');
+var getCaloriesPerDay = require('./dlg/GetCaloriesPerDay');
 
 var apiName = 'diet';
 
