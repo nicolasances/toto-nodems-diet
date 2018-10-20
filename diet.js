@@ -22,6 +22,7 @@ var getGoal = require('./dlg/goal/GetGoal');
 var postGoal = require('./dlg/goal/PostGoal');
 var putGoal = require('./dlg/goal/PutGoal');
 var getCaloriesPerDay = require('./dlg/stats/GetCaloriesPerDay');
+var getCaloriesPerWeek = require('./dlg/stats/GetCaloriesPerWeek');
 
 var apiName = 'diet';
 
@@ -56,7 +57,8 @@ app.post('/goal', function(req, res) {logger.apiCalled('diet', '/goal', 'POST', 
 app.put('/goal/:id', function(req, res) {logger.apiCalled('diet', '/goal', 'PUT', req.query, req.params, req.body); putGoal.do(req.params.id, req.body).then(function(result) {res.send(result);});});
 
 // Statistical APIs
-app.get('/stats/caloriesPerDay', function(req, res) {logger.apiCalled('diet', '/stats/calories', 'GET', req.query, req.params, req.body); getCaloriesPerDay.do(req.query.dateFrom).then(function(result) {res.send(result);});});
+app.get('/stats/caloriesPerDay', function(req, res) {logger.apiCalled('diet', '/stats/caloriesPerDay', 'GET', req.query, req.params, req.body); getCaloriesPerDay.do(req.query.dateFrom).then(function(result) {res.send(result);});});
+app.get('/stats/caloriesPerWeek', function(req, res) {logger.apiCalled('diet', '/stats/caloriesPerWeek', 'GET', req.query, req.params, req.body); getCaloriesPerWeek.do(req.query.dateFrom).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
   console.log('Diet Microservice up and running!');
