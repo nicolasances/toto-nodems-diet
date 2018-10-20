@@ -21,6 +21,7 @@ var putMealPrep = require('./dlg/PutMealPrepDelegate');
 var getGoal = require('./dlg/goal/GetGoal');
 var postGoal = require('./dlg/goal/PostGoal');
 var putGoal = require('./dlg/goal/PutGoal');
+var getCaloriesPerDay = require('./dlg/goal/GetCaloriesPerDay');
 
 var apiName = 'diet';
 
@@ -53,6 +54,7 @@ app.put('/mealPreps/:id', function(req, res) {logger.apiCalled('diet', '/mealPre
 app.get('/goal', function(req, res) {logger.apiCalled('diet', '/goal', 'GET', req.query, req.params, req.body); getGoal.do().then(function(result) {res.send(result);});});
 app.post('/goal', function(req, res) {logger.apiCalled('diet', '/goal', 'POST', req.query, req.params, req.body); postGoal.do(req.body).then(function(result) {res.send(result);});});
 app.put('/goal/:id', function(req, res) {logger.apiCalled('diet', '/goal', 'PUT', req.query, req.params, req.body); putGoal.do(req.params.id, req.body).then(function(result) {res.send(result);});});
+app.get('/stats/calories', function(req, res) {logger.apiCalled('diet', '/stats/calories', 'GET', req.query, req.params, req.body); getCaloriesPerDay.do(req.query.dateFrom).then(function(result) {res.send(result);});});
 
 app.listen(8080, function() {
   console.log('Diet Microservice up and running!');
