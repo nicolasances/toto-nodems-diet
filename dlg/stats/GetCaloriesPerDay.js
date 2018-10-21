@@ -13,7 +13,7 @@ exports.do = function(dateFrom) {
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
       var results = db.db(config.dbName).collection(config.collections.meals)
-          .aggregate([{$match: {date: {$gt: dateFrom}}}, {$group: {_id: {date: '$date'}, calories: {$sum: '$calories'}}}, {$sort: {'_id.date': 1}}])
+          .aggregate([{$match: {date: {$gte: dateFrom}}}, {$group: {_id: {date: '$date'}, calories: {$sum: '$calories'}}}, {$sort: {'_id.date': 1}}])
           .toArray(function(err, array) {
 
         db.close();

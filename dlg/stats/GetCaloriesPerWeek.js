@@ -14,7 +14,7 @@ exports.do = function(dateFrom) {
 
       var results = db.db(config.dbName).collection(config.collections.meals)
           .aggregate([
-            {$match: {date: {$gt: '20180501'}}},
+            {$match: {date: {$gte: dateFrom}}},
             {$group: {_id: {date: '$date'}, calories: {$sum: '$calories'}}},
             {$project: {year: {$year: {$dateFromString: {dateString: '$_id.date', format: '%Y%m%d'}}}, week: {$week: {$dateFromString: {dateString: '$_id.date', format: '%Y%m%d'}}}, calories: '$calories'}},
             {$group: {_id: {week: '$week', year: '$year'}, calories: {$avg: '$calories'}}},
