@@ -1,8 +1,4 @@
-var mongo = 'mongodb');
 var config = '../config');
-var converter = '../conv/FoodConverter');
-
-var MongoClient = mongo.MongoClient;
 
 const categories = [
   {id: 'meat', name: 'Meat', image: '../../img/groceries/categories/meat.png'},
