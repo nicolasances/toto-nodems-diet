@@ -36,7 +36,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(bodyParser.json());
-app.use('/img', express.static('img'));
+app.use('/img', express.static('/img'));
 
 app.get('/', function(req, res) {res.send({api: apiName, status: 'running'});});
 app.get('/water', function(req, res) {logger.apiCalled('diet', '/water', 'GET', req.query, req.params, req.body); getWaterDlg.getWater({date: req.query.date}).then(function(result) {res.send(result);});});
