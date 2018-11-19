@@ -1,4 +1,3 @@
-var config = '../config');
 
 const categories = [
   {id: 'meat', name: 'Meat', image: '../../img/groceries/categories/meat.png'},
