@@ -23,6 +23,7 @@ var postGoal = require('./dlg/goal/PostGoal');
 var putGoal = require('./dlg/goal/PutGoal');
 var getCaloriesPerDay = require('./dlg/stats/GetCaloriesPerDay');
 var getCaloriesPerWeek = require('./dlg/stats/GetCaloriesPerWeek');
+var getCategories = require('./dlg/GetCategories');
 
 var apiName = 'diet';
 
@@ -35,6 +36,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(bodyParser.json());
+app.use('/img', express.static('img'));
 
 app.get('/', function(req, res) {res.send({api: apiName, status: 'running'});});
 app.get('/water', function(req, res) {logger.apiCalled('diet', '/water', 'GET', req.query, req.params, req.body); getWaterDlg.getWater({date: req.query.date}).then(function(result) {res.send(result);});});
@@ -55,6 +57,7 @@ app.put('/mealPreps/:id', function(req, res) {logger.apiCalled('diet', '/mealPre
 app.get('/goal', function(req, res) {logger.apiCalled('diet', '/goal', 'GET', req.query, req.params, req.body); getGoal.do().then(function(result) {res.send(result);});});
 app.post('/goal', function(req, res) {logger.apiCalled('diet', '/goal', 'POST', req.query, req.params, req.body); postGoal.do(req.body).then(function(result) {res.send(result);});});
 app.put('/goal/:id', function(req, res) {logger.apiCalled('diet', '/goal', 'PUT', req.query, req.params, req.body); putGoal.do(req.params.id, req.body).then(function(result) {res.send(result);});});
+app.get('/categories', function(req, res) {logger.apiCalled('diet', '/categories', 'GET', req.query, req.params, req.body); getCategories.do().then(function(result) {res.send(result);});});
 
 // Statistical APIs
 app.get('/stats/caloriesPerDay', function(req, res) {logger.apiCalled('diet', '/stats/caloriesPerDay', 'GET', req.query, req.params, req.body); getCaloriesPerDay.do(req.query.dateFrom).then(function(result) {res.send(result);});});
