@@ -26,7 +26,7 @@ var apiName = 'diet';
 
 var api = new Controller(apiName);
 
-api.staticContent('/img', '/img');
+api.staticContent('/img', '/app/img');
 
 api.path('GET', '/water', getWaterDlg);
 api.path('POST', '/water', postWaterDlg);
