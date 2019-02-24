@@ -4,7 +4,10 @@ var converter = require('../conv/FoodConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.do  = function(id, food) {
+exports.do  = function(req) {
+
+  var id = req.params.id;
+  var food = req.body;
 
   return new Promise(function(success, failure) {
 
@@ -12,7 +15,7 @@ exports.do  = function(id, food) {
 
       db.db(config.dbName).collection(config.collections.food).updateOne(
         {_id: new mongo.ObjectId(id)},
-        {$set: converter.foodConverter.toFoodPO(food)}, 
+        {$set: converter.foodConverter.toFoodPO(food)},
         function(err, res) {
 
         db.close();

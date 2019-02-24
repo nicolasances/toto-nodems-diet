@@ -7,7 +7,10 @@ var MongoClient = mongo.MongoClient;
 /**
  * Date is in yyyyMMdd format
  */
-exports.getMealPreps = function(date, dateFrom) {
+exports.do = function(req) {
+
+  var date = req.query.date;
+  var dateFrom = req.query.dateFrom;
 
   return new Promise(function(success, failure) {
 

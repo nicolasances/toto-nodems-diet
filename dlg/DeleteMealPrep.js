@@ -6,7 +6,9 @@ var MongoClient = mongo.MongoClient;
 /**
  * Delete the specified meal prep
  */
-exports.do = function(id) {
+exports.do = function(req) {
+
+  var id = req.params.id;
 
   return new Promise(function(success, failure) {
 

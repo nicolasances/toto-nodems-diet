@@ -7,7 +7,9 @@ var MongoClient = mongo.MongoClient;
 /**
  * Water filter is {date: yyyyMMdd}
  */
-exports.getWater = function(waterFilter) {
+exports.do = function(req) {
+
+  var waterFilter = req.query;
 
   return new Promise(function(success, failure) {
 

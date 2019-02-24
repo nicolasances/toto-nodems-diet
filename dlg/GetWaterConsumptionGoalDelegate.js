@@ -4,7 +4,7 @@ var converter = require('../conv/WaterConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getWaterConsumptionGoal = function() {
+exports.do = function() {
 
   return new Promise(function(success, failure) {
 

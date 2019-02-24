@@ -6,7 +6,9 @@ var MongoClient = mongo.MongoClient;
 /**
  * Date is in yyyyMMdd format
  */
-exports.do = function(dateFrom) {
+exports.do = function(req) {
+
+  var dateFrom = req.query.dateFrom;
 
   return new Promise(function(success, failure) {
 

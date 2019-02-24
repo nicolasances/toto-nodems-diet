@@ -4,7 +4,9 @@ var converter = require('../conv/WaterConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.postWater  = function(water) {
+exports.do  = function(req) {
+
+  var water = req.body;
 
   return new Promise(function(success, failure) {
 

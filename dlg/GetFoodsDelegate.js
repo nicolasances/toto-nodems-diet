@@ -4,7 +4,9 @@ var converter = require('../conv/FoodConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.getFoods = function(filter) {
+exports.do = function(req) {
+
+  var filter = req.query;
 
   return new Promise(function(success, failure) {
 

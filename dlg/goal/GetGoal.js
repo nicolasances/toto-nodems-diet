@@ -4,7 +4,9 @@ var converter = require('../../conv/GoalConverter');
 
 var MongoClient = mongo.MongoClient;
 
-exports.do  = function(goal) {
+exports.do  = function(req) {
+
+  var goal = req.query.goal;
 
   return new Promise(function(success, failure) {
 
