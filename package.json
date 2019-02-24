@@ -12,6 +12,6 @@
     "moment": "^2.20.1",
     "moment-timezone": "^0.5.14",
     "mongodb": "^3.0.1",
-    "toto-api-controller": "^4.1.0"
+    "toto-api-controller": "^4.1.1"
   }
 }
