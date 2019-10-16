@@ -10,6 +10,7 @@ var putFood = require('./dlg/PutFood');
 var deleteFoodDlg = require('./dlg/DeleteFoodDelegate');
 var getMealsDlg = require('./dlg/GetMealsDelegate');
 var getMealDlg = require('./dlg/GetMealDelegate');
+var deleteMealDlg = require('./dlg/DeleteMealDelegate');
 var postMealDlg = require('./dlg/PostMealDelegate');
 var getMealPrepsDlg = require('./dlg/GetMealPrepsDelegate');
 var postMealPrepDlg = require('./dlg/PostMealPrepDelegate');
@@ -40,6 +41,7 @@ api.path('PUT', '/foods/:id', putFood);
 api.path('GET', '/meals', getMealsDlg);
 api.path('POST', '/meals', postMealDlg);
 api.path('GET', '/meals/:id', getMealDlg);
+api.path('DELETE', '/meals/:id', deleteMealDlg)
 api.path('GET', '/mealPreps', getMealPrepsDlg);
 api.path('POST', '/mealPreps', postMealPrepDlg);
 api.path('DELETE', '/mealPreps/:id', deleteMealPrep);
