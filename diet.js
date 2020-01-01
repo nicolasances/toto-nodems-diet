@@ -37,7 +37,7 @@ api.path('GET', '/water/goal', getWaterConsumptionGoalDlg);
 api.path('PUT', '/water/goal', putWaterConsumptionGoalDlg);
 api.path('GET', '/foods', getFoodsDlg);
 api.path('POST', '/foods', postFoodDlg);
-api.path('DELGETETE', '/foods/:id', getFood);
+api.path('GET', '/foods/:id', getFood);
 api.path('DELETE', '/foods/:id', deleteFoodDlg);
 api.path('PUT', '/foods/:id', putFood);
 api.path('GET', '/meals', getMealsDlg);
