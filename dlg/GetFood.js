@@ -12,9 +12,6 @@ exports.do = function(req) {
 
     return MongoClient.connect(config.mongoUrl, function(err, db) {
 
-      var mongoFilter = {};
-      if (filter.category != null) mongoFilter = {category: filter.category};
-
       var results = db.db(config.dbName).collection(config.collections.food).find({_id: new mongo.ObjectId(foodId)}).toArray(function(err, array) {
 
         db.close();
