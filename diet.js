@@ -26,6 +26,7 @@ var getCaloriesPerWeek = require('./dlg/stats/GetCaloriesPerWeek');
 var getCategories = require('./dlg/GetCategories');
 
 var getFoodRecommendations = require('./dlg/recom/GetFoodRecommendations');
+var getFoodAmountRecom = require('./dlg/recom/GetFoodAmountRecom');
 
 var apiName = 'diet';
 
@@ -62,5 +63,6 @@ api.path('GET', '/stats/caloriesPerWeek', getCaloriesPerWeek);
 
 // Recommendations: this is the entry point to interact with the ML models (dfrbot, ...)
 api.path('GET', '/recommendations/foods', getFoodRecommendations);
+api.path('GET', '/recommendations/foods/:id/amount', getFoodAmountRecom);
 
 api.listen();
