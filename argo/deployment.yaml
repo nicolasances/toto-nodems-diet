@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: toto-nodems-diet
-                  image: nicolasances/toto-nodems-diet:1.0.0
+                  image: nicolasances/toto-nodems-diet:1.0.1
                   ports: 
                     - containerPort: 8080
                   volumeMounts:
