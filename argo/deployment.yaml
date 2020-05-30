@@ -6,6 +6,7 @@ metadata:
         microservice: toto-nodems-diet
 spec: 
     replicas: 1
+    revisionHistoryLimit: 0
     selector:
         matchLabels:
             microservice: toto-nodems-diet
